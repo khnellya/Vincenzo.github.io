@@ -1,1 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #B2AD82;
+            color: #ecf0f1;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: left;
+            padding-top: 60px; /* Added to avoid content being hidden behind the sticky menu */
+        }
+        nav {
+            background-color: #6E531C;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .paragraph img {
+            max-width: 200px; /* Set the desired width */
+            height: auto;
+            float: left; /* Align the image to the left */
+            margin-right: 15px; /* Space between image and text */
+        }
+        #map {
+            height: 300px; /* Set the height of the map */
+            width: 100%; /* Set the width of the map */
+            margin-top: 15px; /* Add some margin to separate it from the text */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="Step 1.html">Step 1 </a>
+    </nav>
+    <div class="container">
+     <div class="paragraph">
+            <p>
+     </h1> Vespro, Scena di Vita Quotidiana   </h1> 
+<p>
+After collecting all the necessary information, the next phase involves enhancing the data and leveraging Large Language Models (LLMs) for deeper analysis. 
+To carry out this comparison, I plan to use two models: ChatGPT and Gemini. 
+<p>
+We used: 
+-Zero-shot prompting: Involves asking the model to generate responses or solve tasks without any prior examples or context. It tests the model's ability to handle new or unfamiliar queries based solely on its training. 
+-Few-shot prompting: Provides the model with a few example inputs and outputs to illustrate the desired response style or format. This technique helps the model understand the task better and generate more relevant and accurate responses. 
+-Chain-of-thought prompting: Encourages the model to articulate its reasoning process in a step-by-step manner. This method helps the model break down complex problems, making its thinking process more transparent and ensuring thorough, well-reasoned answers. 
+ <p>
+  Zero Shot Prompting  
+   <p>
+Cultural Property: Venezia Incipriata, Veduta di Città    
+Author:  De Stefano Vincenzo  
+Question: What does this cultural property represent? 
+    <p>
 
+Zero-Shot Prompting
+
+Cultural Property: Vespro, Scena di Vita Quotidiana
+Author:  De Stefano Vincenzo 
+Question: What does this cultural property represent?
+      
+<p> 
+| Table 1 | 
+|---------| 
+| Chat GPT 
+"**Vespro, Scena di Vita Quotidiana**," painted by **Vincenzo De Stefani**, represents a moment of everyday life set during twilight or evening, which is suggested by the term *vespro* (meaning evening or vespers). The painting captures the beauty of daily life, likely depicting people engaged in simple, intimate activities that highlight the artist's focus on naturalism and human emotions. De Stefani was known for his attention to light, mood, and atmosphere, which are key in this work, giving it a serene, reflective quality. The scene reflects Italian traditions, emphasizing familial or community life in a typical Italian setting, and is a testament to his ability to translate common life experiences into art that feels timeless.
+This work also ties into De Stefani's larger contributions to Italian landscape and genre painting, showcasing his commitment to realism and emotional depth.|
+
+| Table 2 |
+|---------|
+| Mixtral
+"Vespro, Scena di Vita Quotidiana" (Evening, Scene of Daily Life) by Vincenzo De Stefano is a cultural property that represents a slice of everyday life, likely in Italy, during the artist's time. Here's a breakdown of what it might represent:
+
+Daily Life: The title suggests that the artwork depicts a typical evening scene. This could include people going about their daily routines, such as returning from work, preparing dinner, or relaxing.
+
+Cultural Heritage: The artwork likely showcases the cultural heritage of the region, including architecture, traditional clothing, and local customs.
+
+Social Interaction: It may represent the social interactions and relationships among the people in the scene, providing a glimpse into the community's dynamics.
+
+Historical Context: The scene can offer insights into the historical context, reflecting the period's economic activities, technological advancements, and societal norms.
+
+Artistic Style: The artwork showcases De Stefano's artistic style, which is often characterized by realism and attention to detail.
+
+Without seeing the specific artwork, these are general themes that can be inferred from the title and the artist's typical subjects. For a more precise representation, it would be helpful to examine the artwork directly.|
+ <p> 
+
+ <p> 
+      <p> 
+</p>
+          </div>
+<p> 
+    
+</h2> One-Shot Prompting </h2>
+
+Cultural Property: Vespro, Scena di Vita Quotidiana 
+Author:  De Stefano Vincenzo 
+Question: Сan you extract cultural entities from this description? List the results.
+     
+      <p>
+        
+ | Table 1 | 
+ |---------|
+| Chat GPT 
+Vespro, Scena di Vita Quotidiana – a painting by Vincenzo De Stefani
+Italian traditions – the cultural setting and themes of the artwork
+Naturalism – the artistic style emphasized in the painting
+Twilight or Evening (Vespro) – the time of day depicted in the painting
+Familial or Community Life – the cultural and social aspect portrayed in the scene |      
+        <p>
+     | Table 2 |
+     |---------|
+| Mixtral
+Vespro, Scena di Vita Quotidiana (Evening, Scene of Daily Life) - The title of the artwork.
+Vincenzo De Stefano - The author or artist of the artwork. |
+             <p>
+               
+    </h3> Chain of Thought Prompting   </h3>
+
+ <p>
+Cultural Property: Vespro, Scena di Vita Quotidiana
+Author:  De Stefano Vincenzo 
+Question: What does this cultural property represent?
+<p>
+| Table 1 | 
+|---------|
+|Chat GPT 
+@prefix arco: <https://w3id.org/arco/ontology/arco/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# Cultural Property: Vespro, Scena di Vita Quotidiana
+<https://example.org/culturalProperty/vespro-scena-di-vita-quotidiana> a arco:CulturalProperty ;
+    rdfs:label "Vespro, Scena di Vita Quotidiana" ;
+    dcterms:creator <https://example.org/person/vincenzo-de-stefani> ;
+    arco:represents <https://example.org/concept/everyday-life> ;
+    arco:hasTimePeriod <https://example.org/timePeriod/twilight> ;
+    arco:isAssociatedWith <https://example.org/concept/italian-traditions> ;
+    dcterms:description "The painting captures everyday life during twilight, focusing on naturalism and Italian familial traditions." .
+
+# Author: Vincenzo De Stefani
+<https://example.org/person/vincenzo-de-stefani> a foaf:Person ;
+    foaf:name "Vincenzo De Stefani" ;
+    foaf:made <https://example.org/culturalProperty/vespro-scena-di-vita-quotidiana> ;
+    dcterms:description "An Italian artist known for his focus on light, mood, and the representation of everyday life." .
+
+# Time Period: Twilight
+<https://example.org/timePeriod/twilight> a arco:TimePeriod ;
+    rdfs:label "Twilight" .
+
+# Concept: Everyday Life
+<https://example.org/concept/everyday-life> a arco:Concept ;
+    rdfs:label "Everyday Life" .
+
+# Concept: Italian Traditions
+<https://example.org/concept/italian-traditions> a arco:Concept ;
+    rdfs:label "Italian Traditions" . |
+ <p>
+| Table 2 | 
+|---------|
+| Gemini
+@prefix arco: <https://w3id.org/arco/ontology/arco/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+# Cultural Property
+<http://example.org/cultural-property/vespro-scena-di-vita-quotidiana> a arco:CulturalProperty ;
+    rdfs:label "Vespro, Scena di Vita Quotidiana"@it ;
+    arco:hasTitle "Vespro, Scena di Vita Quotidiana"@it ;
+    arco:hasCreator <http://example.org/person/vincenzo-de-stefano> ;
+    arco:hasType arco:Painting .
+# Author
+<http://example.org/person/vincenzo-de-stefano> a arco:Person ;
+    rdfs:label "Vincenzo De Stefano"@it ;
+    arco:hasName "Vincenzo De Stefano"@it .|
+ <p>
+     </p>  
+      </div>
+    </div>
+</body>
+</html>
