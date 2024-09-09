@@ -65,7 +65,7 @@ First, we created to identify artists born in Verona.
  <p>
    
 | Table 1 | 
-     |---------|
+|---------|
 | PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 PREFIX cpv: <https://w3id.org/italia/onto/CPV/> 
@@ -101,7 +101,9 @@ https://l1nq.com/Result1 |
 
 After identifying all the artists born in Verona, we then focused on those from the 19th century. To do this, we created the following query: 
         <p>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+ | Table 1 | 
+ |---------|
+|PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 PREFIX cpv: <https://w3id.org/italia/onto/CPV/> 
@@ -119,23 +121,36 @@ WHERE {
     FILTER REGEX( ?birthDate, "(^18)"). 
 } 
 ORDER BY ASC(?birthDate) 
-LIMIT 150      
+LIMIT 150|      
         <p>
-     Results : https://encr.pw/Result2 
+     | Table 2 |
+     |---------|
+|Q2: Which artists are with a birth date in the 19th century? 
+Purpose: This query aims to filter the data to focus specifically on artists born in Verona during the 19th century. 
+Result : https://encr.pw/Result2 |
              <p>
     </h3> Query 3 </h3>
         <p> 
  We had many artists to choose from, but we were particularly interested in De Stefani Vincenzo because of his impressive name. To learn more about him, we created a SPARQL query using RDF statements in HTML+Microdata notation. 
  <p>
-PREFIX cis: <https://w3id.org/arco/resource/Agent/> 
-DESCRIBE cis:c641c649d83b4a7307b954a71a5eb7b7 
+| Table 1 | 
+|---------|
+|PREFIX cis: <https://w3id.org/arco/resource/Agent/> 
+DESCRIBE cis:c641c649d83b4a7307b954a71a5eb7b7 |
  <p>
-Result: https://encr.pw/Result3 
+| Table 2 | 
+|---------|
+|The purpose of this query is to retrieve a detailed description of the resource cis:c641c649d83b4a7307b954a71a5eb7b7, which represented as an artist.
+The DESCRIBE keyword returns all triples (statements) related to this resource, providing its full set of properties and any relationships. This allows to understand the full context and details associated with this 
+De Stefani Vincenzo. 
+Result: https://encr.pw/Result3 |
  <p>
  </h4> Query 4 </h4>
 Next, we wanted to list all of his paintings in alphabetical order, so we created this query:
         </p>
- PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+| Table 1 | 
+|---------|
+| PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 
 PREFIX arco: <https://w3id.org/arco/ontology/arco/> 
 
@@ -150,7 +165,7 @@ WHERE {
   a-cd:hasAuthor agent:c641c649d83b4a7307b954a71a5eb7b7 
     OPTIONAL { ?culturalProperty dc:title ?title } 
 } 
-ORDER BY ASC(?title)    
+ORDER BY ASC(?title)|    
        </p>
     Result : http://surl.li/uomvbi 
      </p>
