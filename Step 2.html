@@ -1,1 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #B2AD82;
+            color: #ecf0f1;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: left;
+            padding-top: 60px; /* Added to avoid content being hidden behind the sticky menu */
+        }
+        nav {
+            background-color: #6E531C;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .paragraph img {
+            max-width: 200px; /* Set the desired width */
+            height: auto;
+            float: left; /* Align the image to the left */
+            margin-right: 15px; /* Space between image and text */
+        }
+        #map {
+            height: 300px; /* Set the height of the map */
+            width: 100%; /* Set the width of the map */
+            margin-top: 15px; /* Add some margin to separate it from the text */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="Step 1.html">Step 1 </a>
+    </nav>
+    <div class="container">
+        <h1></h1>
+     <div class="paragraph">
+            <p>
+     </h1> STEP 2. LLM   </h1> 
+<p>
+After collecting all the necessary information, the next phase involves enhancing the data and leveraging Large Language Models (LLMs) for deeper analysis. 
+To carry out this comparison, I plan to use two models: ChatGPT and Gemini. 
+<p>
+We used: 
+-Zero-shot prompting: Involves asking the model to generate responses or solve tasks without any prior examples or context. It tests the model's ability to handle new or unfamiliar queries based solely on its training. 
+-Few-shot prompting: Provides the model with a few example inputs and outputs to illustrate the desired response style or format. This technique helps the model understand the task better and generate more relevant and accurate responses. 
+-Chain-of-thought prompting: Encourages the model to articulate its reasoning process in a step-by-step manner. This method helps the model break down complex problems, making its thinking process more transparent and ensuring thorough, well-reasoned answers. 
+ <p>
+  Zero Shot Prompting  
+   <p>
+Cultural Property: Venezia Incipriata, Veduta di Città    
+Author:  De Stefano Vincenzo  
+Question: What does this cultural property represent? 
+    <p>
+| Table 1 | 
+|---------|
+| 
+Chat GPT 
 
+"Venezia Incipriata, Veduta di Città" by De Stefani Vincenzo likely represents a cityscape of Venice, capturing its distinctive atmosphere. The term "incipriata" might refer to a hazy or powdered appearance, suggesting a soft, ethereal depiction of the city. "Veduta di Città" translates to "view of the city," indicating that the painting is a landscape portrayal of Venice, focusing on the architectural beauty and daily life of the city. 
+The painting may reflect Venice's unique interplay of light, water, and structure, emphasizing its timeless charm. De Stefani Vincenzo’s work often highlighted the serene, atmospheric qualities of Italian landscapes and cityscapes, so this cultural property would likely serve as a tribute to Venice's iconic urban and natural beauty.  |
+ <p> 
+     | Table 2 |
+     |---------|
+|
+Gemini  
+
+What could it represent: 
+
+-A snapshot of Venice: Like a photograph, the engraving captures a specific moment in time of the city, with its buildings, its squares, and its unique atmosphere. 
+
+-The idealization of beauty: Venice has always been considered an extremely beautiful city, and this work highlights its most fascinating characteristics, creating an ideal image. 
+
+-A collective identity: The city is a place of belonging for Venetians, and views like this strengthen the sense of community and identity. 
+
+-A historical document: Engravings are valuable historical sources. By studying this work, we can reconstruct the appearance of the city in a specific period and understand its urban development. 
+
+-An artistic technique: The term "incipriata" could refer to a particular engraving technique used by De Stefani to create light and shadow effects, giving the work a characteristic atmosphere. |
+ <p> 
+
+ <p> 
+      <p> 
+</p>
+          </div>
+<p> 
+    
+</h2> Few-Shot Prompting </h2>
+
+Cultural Property: Venezia Incipriata, Veduta di Città    
+Author:  De Stefano Vincenzo  
+Question: Сan you extract cultural entities from this description? List the results. 
+
+ Example: 'The Persistence of Memory' by Salvador Dalí 
+'The Scream' by Edvard Munch 
+'Girl with a Pearl Earring' by Johannes Vermeer"      
+      <p>
+        
+ | Table 1 | 
+ |---------|
+|Chat GPT 
+"Venezia Incipriata, Veduta di Città" – The painting by De Stefani Vincenzo. 
+De Stefani Vincenzo – The artist of the painting. 
+Venice (Venezia) – The city depicted in the painting. |      
+        <p>
+     | Table 2 |
+     |---------|
+|Gemini 
+"Venezia Incipriata, Veduta di Città": This is the specific artwork being discussed.  
+Vincenzo De Stefani: The artist who created the artwork. 
+Venice: The city depicted in the artwork 
+Engraving: The artistic technique used to create the artwork. 
+Italian Renaissance Art: The broader cultural period and artistic style to which the artwork might belong. |
+             <p>
+    </h3> Chain of Thought Prompting   </h3>
+
+ <p>
+| Table 1 | 
+|---------|
+|Chat GPT 
+
+@prefix arco: <https://w3id.org/arco/ontology/arco/> . 
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> . 
+
+@prefix dcterms: <http://purl.org/dc/terms/> . 
+
+@prefix foaf: <http://xmlns.com/foaf/0.1/> . 
+
+<https://example.org/artwork/venezia-incipriata-veduta-di-citta> a arco:CulturalProperty ; 
+
+    dc:title "Venezia Incipriata, Veduta di Città" ; 
+
+    arco:hasAuthor <https://example.org/person/de-stefani-vincenzo> ; 
+
+    arco:depicts <https://example.org/place/venice> ; 
+
+    dcterms:creator <https://example.org/person/de-stefani-vincenzo> ; 
+
+    dcterms:subject <https://example.org/place/venice> ; 
+
+    foaf:depiction <https://example.org/artwork/venezia-incipriata-veduta-di-citta/image> . 
+
+<https://example.org/person/de-stefani-vincenzo> a foaf:Person ; 
+
+    foaf:name "De Stefani Vincenzo" . 
+
+<https://example.org/place/venice> a arco:Place ; 
+
+    dc:title "Venice" .  |
+ <p>
+| Table 2 | 
+|---------|
+|Gemini  
+@prefix arco: <https://w3id.org/arco/ontology/arco/> . 
+
+@prefix foaf: <http://xmlns.com/foaf/0.1/> . 
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> . 
+
+@prefix dcterms: <http://purl.org/dc/terms/> . 
+
+<https://example.org/artwork/venezia-incipriata> a arco:CulturalProperty ; 
+
+    dc:title "Venezia Incipriata, Veduta di Città" ; 
+
+    arco:hasAuthor <https://example.org/person/vincenzo-de-stefani> ; 
+
+    arco:depicts <https://example.org/place/venice> ; 
+
+    dcterms:creator <https://example.org/person/vincenzo-de-stefani> ; 
+
+    dcterms:subject <https://example.org/place/venice> ; 
+
+    foaf:depiction <https://example.org/artwork/venezia-incipriata/image> . 
+
+<https://example.org/person/vincenzo-de-stefani> a foaf:Person ; 
+
+    foaf:name "Vincenzo De Stefani" .
+
+<https://example.org/place/venice> a arco:Place ; 
+    dc:title "Venice" .|
+ <p>
+ </h4> CREATING New triplets  </h4>
+ </p>
+| Table 1 | 
+|---------|
+| PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/> 
+
+PREFIX arco: <https://w3id.org/arco/ontology/arco/> 
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  
+
+SELECT DISTINCT ?sub ?slabel 
+
+WHERE 
+
+{  
+    ?cp a-cd:hasSubject ?sub . 
+
+    ?sub a a-cd:Subject ; 
+
+         rdfs:label ?slabel . 
+
+    FILTER(REGEX(?slabel, "bridge|canal|church", "i")) 
+
+}  |    
+       </p>
+| Table 2 | 
+|---------|
+
+|Question: 
+
+Are there subjects in ArCo that we can connect to the architectural features depicted in "Venezia Incipriata, Veduta di Città"? 
+
+New Triplet:  
+https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500404883 a-cd:hasSubject https://dati.beniculturali.it/lodview-arco/resource/Veneto/Subject/3271f017cd678827ffdc24962fe831f6.html 
+
+Purpose: 
+This query finds all subjects in the ArCo knowledge graph whose labels contain the words "bridge", "canal", or "church" that may connect to "Venezia Incipriata, Veduta di Città." | 
+     </p>  
+      </div>
+    </div>
+</body>
+</html>
