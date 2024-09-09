@@ -63,7 +63,10 @@ Our exploration started with a broad search in the ArCo knowledge graph using SP
 Query 1 
 First, we created to identify artists born in Verona. 
  <p>
-    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+   
+| Table 1 | 
+     |---------|
+| PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 PREFIX cpv: <https://w3id.org/italia/onto/CPV/> 
 PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/> 
@@ -77,15 +80,18 @@ WHERE {
    ?profession l0:name "pittore". 
    ?birthPlace l0:name "Verona". 
 } 
-ORDER BY ASC(?name) 
+ORDER BY ASC(?name) |
  <p> 
- Results 
- <p> 
-https://l1nq.com/Result1 
- <p> 
+     | Table 2 |
+     |---------|
+|Q1: Which artists born in Verona are identified as painters, and what are their names?
 Purpose of this query 
- <p> 
 The query retrieves and lists unique artists who are painters and were born in Verona, displaying their names in alphabetical order. 
+Results 
+https://l1nq.com/Result1 |
+ <p> 
+
+ <p> 
       <p> 
 </p>
           </div>
@@ -126,8 +132,28 @@ DESCRIBE cis:c641c649d83b4a7307b954a71a5eb7b7
  <p>
 Result: https://encr.pw/Result3 
  <p>
+ </h4> Query 4 </h4>
+Next, we wanted to list all of his paintings in alphabetical order, so we created this query:
         </p>
+ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+PREFIX arco: <https://w3id.org/arco/ontology/arco/> 
+
+PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/> 
+
+PREFIX agent: <https://w3id.org/arco/resource/Agent/> 
+
+SELECT * 
+
+WHERE { 
+    ?culturalProperty a arco:HistoricOrArtisticProperty ; 
+  a-cd:hasAuthor agent:c641c649d83b4a7307b954a71a5eb7b7 
+    OPTIONAL { ?culturalProperty dc:title ?title } 
+} 
+ORDER BY ASC(?title)    
        </p>
+    Result : http://surl.li/uomvbi 
+     </p>
       </div>
     </div>
 </body>
