@@ -57,10 +57,37 @@
      <div class="paragraph">
             <p>
      </h1>
- SPARQL Query Formulation    
+STEP 1. SPARQL Query Formulation    
 <p>
 Our exploration started with a broad search in the ArCo knowledge graph using SPARQL queries to find artists born in Verona. Since we had visited the city, we were curious about who contributed to Italian painting in the 19th century 
 <p>
+Query 1 
+First, we created to identify artists born in Verona. 
+ <p>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX cpv: <https://w3id.org/italia/onto/CPV/> 
+PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/> 
+SELECT DISTINCT ?artist ?name 
+WHERE { 
+    ?artist rdf:type cpv:Person ; 
+            rdf:type l0:Agent ; 
+            rdfs:label ?name ; 
+            a-cd:hasProfession ?profession ; 
+            cpv:hasBirthPlace ?birthPlace. 
+   ?profession l0:name "pittore". 
+   ?birthPlace l0:name "Verona". 
+} 
+ORDER BY ASC(?name) 
+ <p> 
+ Results 
+ <p> 
+https://l1nq.com/Result1 
+ <p> 
+Purpose of this query 
+ <p> 
+The query retrieves and lists unique artists who are painters and were born in Verona, displaying their names in alphabetical order. 
+      <p> 
 </p>
          
         </div>
